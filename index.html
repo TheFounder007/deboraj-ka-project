@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEO // AXIOM — Post-Future Underground Streetwear & Sneaker Lab. High-performance technical apparel, platform sneakers, and tactical gear.">
+  <title>NEO // AXIOM — Post-Future Streetwear & Sneaker Lab</title>
+
+  <!-- Google Fonts for Neo-Brutalist / Cyber-Streetwear Aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="scanline-overlay">
+
+  <!-- =========================================================================
+       1. LIVE DROP MARQUEE TICKER WITH COUNTDOWN
+       ========================================================================= -->
+  <aside class="cyber-ticker" aria-label="Drop Announcements">
+    <div class="ticker-inner">
+      <div class="ticker-segment">
+        <span class="live-dot"></span>
+        <span class="ticker-text">DROP // 08 IS LIVE NOW</span>
+        <span class="ticker-sep">//</span>
+        <span>NEXT ARCHIVE VAULT CLOSES IN: <strong id="dropCountdown">04:32:19</strong></span>
+        <span class="ticker-sep">//</span>
+        <span>USE PROTOCOL CODE <strong class="code-pill">AXIOM20</strong> FOR 20% OFF INITIAL ACQUISITION</span>
+        <span class="ticker-sep">//</span>
+        <span>FREE GLOBAL EXPRESS DISPATCH OVER $150</span>
+        <span class="ticker-sep">//</span>
+        <span>100% CORDURA® & VIBRAM® CERTIFIED MATERIALS</span>
+        <span class="ticker-sep">//</span>
+      </div>
+      <div class="ticker-segment" aria-hidden="true">
+        <span class="live-dot"></span>
+        <span class="ticker-text">DROP // 08 IS LIVE NOW</span>
+        <span class="ticker-sep">//</span>
+        <span>NEXT ARCHIVE VAULT CLOSES IN: <strong class="dropCountdownMirror">04:32:19</strong></span>
+        <span class="ticker-sep">//</span>
+        <span>USE PROTOCOL CODE <strong class="code-pill">AXIOM20</strong> FOR 20% OFF INITIAL ACQUISITION</span>
+        <span class="ticker-sep">//</span>
+        <span>FREE GLOBAL EXPRESS DISPATCH OVER $150</span>
+        <span class="ticker-sep">//</span>
+        <span>100% CORDURA® & VIBRAM® CERTIFIED MATERIALS</span>
+        <span class="ticker-sep">//</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       2. PRIMARY CYBER HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="cyber-header" id="mainHeader">
+    <div class="header-shell">
+      
+      <!-- Mobile Menu Hamburger -->
+      <button class="nav-icon-btn mobile-trigger" id="mobileMenuBtn" aria-label="Open Mobile Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Brand Mark -->
+      <a href="#hero" class="brand-link" aria-label="NEO AXIOM Home">
+        <span class="brand-glitch" data-text="NEO // AXIOM">NEO // AXIOM</span>
+        <span class="brand-subtag">DROP LAB [SYS_v2.8]</span>
+      </a>
+
+      <!-- Desktop Tactical Nav -->
+      <nav class="desktop-menu" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#catalog" class="nav-item active" data-filter="all">[01] ALL DROPS</a></li>
+          <li><a href="#catalog" class="nav-item" data-filter="new-drops">[02] NEW IN</a></li>
+          <li><a href="#catalog" class="nav-item" data-filter="clothing">[03] STREETWEAR</a></li>
+          <li><a href="#catalog" class="nav-item" data-filter="footwear">[04] SNEAKERS</a></li>
+          <li><a href="#catalog" class="nav-item" data-filter="accessories">[05] TACTICAL GEAR</a></li>
+          <li><a href="#catalog" class="nav-item nav-sale-tag" data-filter="sale">[06] ARCHIVE <span class="badge-mini">-30%</span></a></li>
+          <li><a href="#manifesto" class="nav-item">[07] MANIFESTO</a></li>
+        </ul>
+      </nav>
+
+      <!-- Control Terminal Actions -->
+      <div class="header-controls">
+        
+        <!-- Search Toggle -->
+        <button class="control-btn" id="searchBtn" title="Instant Search Catalog" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Sound SFX Toggle -->
+        <button class="control-btn" id="audioToggleBtn" title="Toggle UI Sound Effects" aria-label="Toggle Sound Effects">
+          <svg class="audio-on-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg class="audio-off-icon hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <!-- Theme Toggle (Dark Cyber / Industrial Bone) -->
+        <button class="control-btn" id="themeBtn" title="Toggle Theme" aria-label="Toggle Dark/Light Mode">
+          <span class="theme-icon-dark">⚡ DARK</span>
+          <span class="theme-icon-light hidden">☀️ LIGHT</span>
+        </button>
+
+        <!-- Wishlist Vault -->
+        <button class="control-btn badge-container" id="wishlistBtn" title="Wishlist Vault" aria-label="Wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="count-pill" id="wishlistCount">0</span>
+        </button>
+
+        <!-- Stash Bag (Cart) -->
+        <button class="control-btn badge-container cart-highlight" id="cartBtn" title="Stash Bag" aria-label="Shopping Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="count-pill cart-count" id="cartCount">0</span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- HUD Search Overlay -->
+    <div class="hud-search-bar" id="searchDropdown">
+      <div class="search-flex-shell">
+        <span class="search-prompt">> QUERY:</span>
+        <input type="text" id="hudSearchInput" placeholder="Search piece, sneaker, fabric or spec..." autocomplete="off">
+        <button class="search-exit-btn" id="closeSearchBtn">ESC ✕</button>
+      </div>
+      <div class="trending-tags-bar">
+        <span class="tag-title">RAPID TAGS:</span>
+        <button class="tag-btn" data-tag="Parka">#Modular Parka</button>
+        <button class="tag-btn" data-tag="Sneaker">#High-Tops</button>
+        <button class="tag-btn" data-tag="Hoodie">#Heavy Hoodie</button>
+        <button class="tag-btn" data-tag="Cargos">#Tactical Cargos</button>
+        <button class="tag-btn" data-tag="Chest Rig">#Chest Rig</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-side-menu" id="mobileMenu">
+    <div class="mobile-menu-top">
+      <span class="menu-brand">NEO // AXIOM</span>
+      <button class="close-mobile-btn" id="closeMobileBtn">✕</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#catalog" class="mob-link" data-filter="all">[01] ALL DROPS</a></li>
+      <li><a href="#catalog" class="mob-link" data-filter="new-drops">[02] NEW ARRIVALS</a></li>
+      <li><a href="#catalog" class="mob-link" data-filter="clothing">[03] STREET APPAREL</a></li>
+      <li><a href="#catalog" class="mob-link" data-filter="footwear">[04] SNEAKERS & RUNNERS</a></li>
+      <li><a href="#catalog" class="mob-link" data-filter="accessories">[05] TACTICAL EDC & GEAR</a></li>
+      <li><a href="#catalog" class="mob-link mob-sale" data-filter="sale">[06] ARCHIVE SALE (-30%)</a></li>
+      <li><a href="#manifesto" class="mob-link">[07] THE MANIFESTO</a></li>
+    </ul>
+    <div class="mobile-menu-foot">
+      <span>GRID STATUS: ONLINE</span>
+      <span>DISPATCH: GLOBAL DHL PRIORITY</span>
+    </div>
+  </aside>
+
+  <div class="screen-backdrop" id="screenBackdrop"></div>
+
+  <!-- =========================================================================
+       3. HIGH-VOLTAGE CYBER HERO BANNER
+       ========================================================================= -->
+  <section class="cyber-hero" id="hero">
+    <div class="hero-bg-media">
+      <img 
+        src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=1920&q=85" 
+        alt="Neo Streetwear Editorial Model"
+        class="hero-media-cover"
+      >
+      <div class="cyber-grid-overlay"></div>
+      <div class="hero-vignette"></div>
+    </div>
+
+    <!-- HUD Coordinate Markers -->
+    <div class="hud-corner hud-tl">[LAT 35.6762° N // TOKYO]</div>
+    <div class="hud-corner hud-tr">[DROP CODE: 08-AXM]</div>
+    <div class="hud-corner hud-bl">[GRID: ACTIVE]</div>
+    <div class="hud-corner hud-br">[SYSTEM v2.8]</div>
+
+    <div class="hero-main-container">
+      <div class="hero-badge-tag">
+        <span class="blink-led"></span>
+        <span>POST-FUTURE STREETWEAR CAPSULE // DROP 08</span>
+      </div>
+
+      <h1 class="hero-title">
+        ENGINEERED FOR THE <br>
+        <span class="neon-highlight">CONCRETE MATRIX</span>
+      </h1>
+
+      <p class="hero-summary">
+        An unapologetic collision of high-performance technical fabrics, oversized brutalist silhouettes, 
+        and sculptural sneakers forged for dystopian urban terrains.
+      </p>
+
+      <div class="hero-button-row">
+        <a href="#catalog" class="btn-cyber btn-volt" id="heroDropBtn">
+          <span>ACCESS DROP 08</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#manifesto" class="btn-cyber btn-outline">
+          <span>READ MANIFESTO</span>
+        </a>
+      </div>
+
+      <!-- Live Telemetry Stats -->
+      <div class="hero-telemetry">
+        <div class="telemetry-box">
+          <span class="tele-val">16</span>
+          <span class="tele-lbl">PIECES DROPPED</span>
+        </div>
+        <div class="telemetry-box">
+          <span class="tele-val">520G</span>
+          <span class="tele-lbl">ORGANIC COTTON GSM</span>
+        </div>
+        <div class="telemetry-box">
+          <span class="tele-val">1000D</span>
+          <span class="tele-lbl">BALLISTIC CORDURA®</span>
+        </div>
+        <div class="telemetry-box">
+          <span class="tele-val">00</span>
+          <span class="tele-lbl">RESTOCKS PLANNED</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#catalog" class="hero-scroll-link">
+      <span>SCROLL DOWN // ACCESS CATALOG</span>
+      <div class="scroll-blip"></div>
+    </a>
+  </section>
+
+  <!-- =========================================================================
+       4. TECHNICAL ASSURANCE / SPECS STRIP
+       ========================================================================= -->
+  <section class="assurance-strip">
+    <div class="strip-container">
+      <div class="assurance-item">
+        <span class="assurance-icon">📦</span>
+        <div>
+          <h4>GLOBAL EXPRESS DISPATCH</h4>
+          <p>DHL Express 48h tracked dispatch worldwide</p>
+        </div>
+      </div>
+      <div class="assurance-item">
+        <span class="assurance-icon">🛡️</span>
+        <div>
+          <h4>100% CORDURA® & VIBRAM®</h4>
+          <p>Lab-tested tear-resistant and waterproof shells</p>
+        </div>
+      </div>
+      <div class="assurance-item">
+        <span class="assurance-icon">🔒</span>
+        <div>
+          <h4>LIMITED PRODUCTION SERIALS</h4>
+          <p>Individually numbered numbered archive drops</p>
+        </div>
+      </div>
+      <div class="assurance-item">
+        <span class="assurance-icon">⚡</span>
+        <div>
+          <h4>14-DAY VAULT RETURN PRIVILEGE</h4>
+          <p>Frictionless return portal with prepaid return codes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. MAIN PRODUCT CATALOG (CSS GRID ARCHITECTURE)
+       ========================================================================= -->
+  <main class="store-catalog" id="catalog">
+    <div class="catalog-heading-shell">
+      <div class="terminal-tag">> DATABASE CATALOG // SELECT PIECE</div>
+      <h2 class="catalog-title">THE STREETWEAR ARCHIVE</h2>
+      <p class="catalog-desc">
+        16 technical silhouettes built with zero concessions to mediocrity. 
+        Select a category below or run a live query against the matrix.
+      </p>
+    </div>
+
+    <!-- Filter & Sort Control Deck -->
+    <section class="control-deck">
+      <div class="deck-row">
+        
+        <!-- Category Filter Chips -->
+        <div class="filter-pill-group" role="tablist">
+          <button class="pill-chip active" data-category="all" role="tab" aria-selected="true">
+            ALL DROPS <span class="chip-num" id="cntAll">16</span>
+          </button>
+          <button class="pill-chip" data-category="new-drops" role="tab" aria-selected="false">
+            NEW IN <span class="chip-num" id="cntNew">6</span>
+          </button>
+          <button class="pill-chip" data-category="clothing" role="tab" aria-selected="false">
+            STREETWEAR <span class="chip-num" id="cntClothing">7</span>
+          </button>
+          <button class="pill-chip" data-category="footwear" role="tab" aria-selected="false">
+            SNEAKERS <span class="chip-num" id="cntFootwear">4</span>
+          </button>
+          <button class="pill-chip" data-category="accessories" role="tab" aria-selected="false">
+            TACTICAL GEAR <span class="chip-num" id="cntAccessories">5</span>
+          </button>
+          <button class="pill-chip pill-sale" data-category="sale" role="tab" aria-selected="false">
+            ARCHIVE SALE <span class="chip-num" id="cntSale">6</span>
+          </button>
+        </div>
+
+        <!-- Filter Controls Deck -->
+        <div class="deck-tools">
+          
+          <!-- In-Page Live Query -->
+          <div class="deck-search">
+            <span class="prompt-sym">></span>
+            <input type="text" id="catalogSearch" placeholder="Filter current view...">
+          </div>
+
+          <!-- Sort Select -->
+          <div class="deck-sort">
+            <label for="catalogSort">SORT:</label>
+            <select id="catalogSort">
+              <option value="featured">DROP SEQUENCE</option>
+              <option value="price-asc">PRICE: LOW > HIGH</option>
+              <option value="price-desc">PRICE: HIGH > LOW</option>
+              <option value="rating">HIGHEST RATED</option>
+              <option value="name">ALPHABETICAL [A-Z]</option>
+            </select>
+          </div>
+
+          <!-- View Mode Toggles -->
+          <div class="view-mode-switch">
+            <button class="view-btn active" id="btnDenseGrid" title="4-Column Matrix View" aria-label="Dense Grid">
+              <span class="mode-grid-icon">▦▦</span>
+            </button>
+            <button class="view-btn" id="btnPosterGrid" title="2-Column Poster View" aria-label="Spacious Poster Grid">
+              <span class="mode-grid-icon">▮▮</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Result Counter & Clear Action -->
+      <div class="deck-status-bar">
+        <span class="status-count-txt" id="resultsCountTxt">SHOWING 16 SILHOUETTES [ALL]</span>
+        <button class="reset-filter-btn hidden" id="resetFiltersBtn">[RESET ACTIVE FILTERS ✕]</button>
+      </div>
+    </section>
+
+    <!-- Product Grid (CSS Grid Container) -->
+    <div class="neo-product-grid" id="productGrid" aria-live="polite">
+      <!-- Injected dynamically via js/app.js -->
+    </div>
+
+    <!-- Empty Results Fallback -->
+    <div class="empty-query-box hidden" id="emptyNotice">
+      <div class="empty-symbol">[!] NULL SET</div>
+      <h3>ZERO PIECES MATCH QUERY</h3>
+      <p>No technical silhouettes found matching current matrix parameters.</p>
+      <button class="btn-cyber btn-volt" id="clearEmptyQueryBtn">RELOAD COMPLETE DATABASE</button>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       6. DROP MANIFESTO // LOOKBOOK FEATURE SECTION
+       ========================================================================= -->
+  <section class="manifesto-section" id="manifesto">
+    <div class="manifesto-grid">
+      <div class="manifesto-visual">
+        <div class="visual-bracket top-left"></div>
+        <div class="visual-bracket bottom-right"></div>
+        <img 
+          src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80" 
+          alt="Concrete Matrix Editorial Streetwear"
+          loading="lazy"
+        >
+        <div class="visual-hud-tag">
+          <span class="v-tag-code">LOOKBOOK NO. 08</span>
+          <strong>THE CONCRETE MATRIX EDIT</strong>
+        </div>
+      </div>
+
+      <div class="manifesto-text-block">
+        <span class="manifesto-subtag">> DESIGN PHILOSOPHY // PROTOCOL 08</span>
+        <h2 class="manifesto-headline">
+          "FUNCTION OVER COMFIRMITY. <br>
+          <span class="neon-highlight">ARMOR FOR THE HYPERCITY."</span>
+        </h2>
+        
+        <p class="manifesto-lead">
+          NEO // AXIOM was born in underground underground spaces across Tokyo and Berlin. 
+          We engineer garments that serve as modular tactical shells: waterproof ripstop nylon, 
+          FIDLOCK® magnetic fasteners, and architectural silhouettes that dominate the cityscape.
+        </p>
+
+        <ul class="manifesto-features">
+          <li><strong>01 //</strong> Zero fast-fashion seasonality. Limited numbered releases only.</li>
+          <li><strong>02 //</strong> 100% military-grade Cordura®, Ripstop, and French Terry.</li>
+          <li><strong>03 //</strong> Modular utility pockets engineered for hands-free EDC mobility.</li>
+        </ul>
+
+        <div class="manifesto-action">
+          <button class="btn-cyber btn-volt" id="manifestoShopBtn">
+            <span>EXPLORE STREETWEAR CAPSULE</span>
+            <span class="btn-arrow">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. VERIFIED COMMUNITY PATRON REVIEWS ("DISPATCH LOGS")
+       ========================================================================= -->
+  <section class="dispatch-reviews">
+    <div class="reviews-shell">
+      <div class="terminal-tag">> FIELD TEST TRANSMISSIONS</div>
+      <h2 class="catalog-title">PATRON DISPATCH LOGS</h2>
+      <p class="catalog-desc">Uncensored field reports from verified owners operating in the concrete grid.</p>
+
+      <div class="reviews-columns">
+        <!-- Log 1 -->
+        <article class="dispatch-card">
+          <div class="dispatch-header">
+            <span class="dispatch-id">LOG // #4892</span>
+            <span class="dispatch-stars">★★★★★</span>
+          </div>
+          <p class="dispatch-quote">
+            "The KINETIX Modular Parka is an absolute tank. Tested it through a torrential Tokyo rainstorm; 
+            the 3-layer Cordura shell held 100% dry. Detachable cargo sleeves are insanely useful. Best streetwear piece I own."
+          </p>
+          <div class="dispatch-meta">
+            <span class="agent-name">REN KAWASAKI</span>
+            <span class="agent-location">SHIBUYA, TOKYO • VERIFIED</span>
+            <span class="agent-item">ITEM: KINETIX MODULAR PARKA</span>
+          </div>
+        </article>
+
+        <!-- Log 2 -->
+        <article class="dispatch-card">
+          <div class="dispatch-header">
+            <span class="dispatch-id">LOG // #5104</span>
+            <span class="dispatch-stars">★★★★★</span>
+          </div>
+          <p class="dispatch-quote">
+            "The AXIOM-01 Platform High-Tops look like they came from a sci-fi movie set, but the Vibram grip 
+            and speed-lacing system make them ridiculously functional for all-day warehouse exploration. Unmatched silhouette."
+          </p>
+          <div class="dispatch-meta">
+            <span class="agent-name">KASPER VOGEL</span>
+            <span class="agent-location">KREUZBERG, BERLIN • VERIFIED</span>
+            <span class="agent-item">ITEM: AXIOM-01 HIGH-TOP</span>
+          </div>
+        </article>
+
+        <!-- Log 3 -->
+        <article class="dispatch-card">
+          <div class="dispatch-header">
+            <span class="dispatch-id">LOG // #6320</span>
+            <span class="dispatch-stars">★★★★★</span>
+          </div>
+          <p class="dispatch-quote">
+            "The 520 GSM organic cotton on the Cyber Hoodie is the heaviest, most sculptural fleece I've ever felt. 
+            The hood stays upright on its own without collapsing. Absolute grail."
+          </p>
+          <div class="dispatch-meta">
+            <span class="agent-name">ELENA ROSTOVA</span>
+            <span class="agent-location">SEOUL, KOREA • VERIFIED</span>
+            <span class="agent-item">ITEM: CYBER-OVERSIZE HOODIE</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. VIP DROP PASS NEWSLETTER PROTOCOL
+       ========================================================================= -->
+  <section class="vip-drop-pass">
+    <div class="pass-box">
+      <div class="pass-glitch-tag">[PRIORITY ACCESS PASS]</div>
+      <h2 class="pass-headline">JOIN THE UNDERGROUND DROP LIST</h2>
+      <p class="pass-sub">
+        Receive encrypted 1-hour early access keys before drops go public, plus 
+        <strong>20% discount on initial order</strong> with code <code>AXIOM20</code>.
+      </p>
+
+      <form class="pass-form" id="dropPassForm" novalidate>
+        <div class="pass-input-row">
+          <input 
+            type="email" 
+            id="passEmail" 
+            placeholder="ENTER TERMINAL EMAIL (e.g. operator@axiom.io)..." 
+            required
+            aria-label="Email for Drop Pass"
+          >
+          <button type="submit" class="btn-cyber btn-volt">
+            <span>GET DROP PASS</span>
+          </button>
+        </div>
+        <div class="pass-feedback" id="passFeedback" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. BRUTALIST CYBER FOOTER
+       ========================================================================= -->
+  <footer class="cyber-footer">
+    <div class="footer-grid-shell">
+      
+      <!-- Brand Terminal Column -->
+      <div class="footer-col brand-col">
+        <div class="footer-brand">NEO // AXIOM</div>
+        <p class="footer-manifesto-txt">
+          Post-future underground streetwear & sneaker laboratory. 
+          Engineered in Tokyo, Berlin, and Seoul. All rights reserved.
+        </p>
+        <div class="status-indicator-box">
+          <span class="live-dot"></span>
+          <span>MAIN SERVER: 127.0.0.1:8080 // LATENCY: 8ms</span>
+        </div>
+      </div>
+
+      <!-- Drops & Gear -->
+      <div class="footer-col">
+        <h4 class="col-title">> ARCHIVE LINKS</h4>
+        <ul class="col-links">
+          <li><a href="#catalog" class="f-filter" data-filter="new-drops">DROP // 08 NEW IN</a></li>
+          <li><a href="#catalog" class="f-filter" data-filter="clothing">TACTICAL PARKAS & CARGOS</a></li>
+          <li><a href="#catalog" class="f-filter" data-filter="footwear">PLATFORM SNEAKERS & RUNNERS</a></li>
+          <li><a href="#catalog" class="f-filter" data-filter="accessories">CHEST RIGS & EDC PACKS</a></li>
+          <li><a href="#catalog" class="f-filter" data-filter="sale">ARCHIVE VAULT (-30%)</a></li>
+        </ul>
+      </div>
+
+      <!-- Operations & Protocol -->
+      <div class="footer-col">
+        <h4 class="col-title">> PROTOCOL</h4>
+        <ul class="col-links">
+          <li><a href="javascript:void(0)" id="fShipping">Global Express Tracking</a></li>
+          <li><a href="javascript:void(0)" id="fReturns">14-Day Vault Return Portal</a></li>
+          <li><a href="javascript:void(0)" id="fSizing">Tactical Sizing Specifications</a></li>
+          <li><a href="javascript:void(0)" id="fCare">Cordura® Waterproof Care Sheet</a></li>
+          <li><a href="mailto:ops@neo-axiom.io">Direct Dispatch Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Coordinates & Legal -->
+      <div class="footer-col">
+        <h4 class="col-title">> GRID SPECS</h4>
+        <ul class="col-links">
+          <li><a href="#manifesto">The Concrete Matrix Manifesto</a></li>
+          <li><a href="javascript:void(0)">Zero Landfill Circular Protocol</a></li>
+          <li><a href="javascript:void(0)">Authentication NFC Tags</a></li>
+          <li><a href="javascript:void(0)">Terms of Acquisition</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom-deck">
+      <div class="copy-txt">
+        © 2026 NEO AXIOM LABS. Continuous Assessment Project 3 — Fashion Store / E-commerce Frontend.
+      </div>
+      <div class="crypto-pay-badges">
+        <span class="pay-tag">CARD</span>
+        <span class="pay-tag">APPLE PAY</span>
+        <span class="pay-tag">BTC / ETH</span>
+        <span class="pay-tag">KLARNA</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       10. SLIDE-OUT TACTICAL STASH BAG (CART DRAWER)
+       ========================================================================= -->
+  <aside class="tactical-drawer cart-drawer" id="cartDrawer" aria-label="Tactical Stash Bag">
+    <div class="drawer-header-strip">
+      <div class="drawer-title-flex">
+        <span class="drawer-title">TACTICAL STASH BAG</span>
+        <span class="drawer-counter" id="cartBadgeText">[0 ITEMS]</span>
+      </div>
+      <button class="close-cyber-btn" id="closeCartBtn" aria-label="Close Stash Bag">✕</button>
+    </div>
+
+    <!-- Free Dispatch Meter -->
+    <div class="free-shipping-meter">
+      <div class="meter-text" id="freeShippingStatus">
+        Add <strong>$150.00</strong> more for Free Global Priority Dispatch
+      </div>
+      <div class="meter-track">
+        <div class="meter-fill" id="shippingMeterFill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Items List Container -->
+    <div class="drawer-items-box" id="cartItemList">
+      <div class="empty-stash" id="emptyStashNotice">
+        <span class="empty-icon">[Ø]</span>
+        <p>STASH BAG IS CURRENTLY EMPTY</p>
+        <button class="btn-cyber btn-volt btn-sm" id="emptyExploreBtn">EXPLORE DROP 08</button>
+      </div>
+    </div>
+
+    <!-- Cart Footer & Checkout Action -->
+    <div class="drawer-footer-deck" id="cartFooterDeck">
+      <!-- Promo Voucher Input -->
+      <div class="voucher-box">
+        <div class="voucher-input-group">
+          <input type="text" id="voucherCode" placeholder="ENTER PROTOCOL (e.g. AXIOM20)">
+          <button class="btn-cyber btn-volt btn-sm" id="applyVoucherBtn">APPLY</button>
+        </div>
+        <div class="voucher-alert" id="voucherAlert"></div>
+      </div>
+
+      <!-- Financial Breakdown -->
+      <div class="calc-table">
+        <div class="calc-row">
+          <span>SUBTOTAL</span>
+          <span id="subtotalVal">$0.00</span>
+        </div>
+        <div class="calc-row discount-row hidden" id="discountRow">
+          <span>PROTOCOL DISCOUNT (<span id="discountName"></span>)</span>
+          <span id="discountVal">-$0.00</span>
+        </div>
+        <div class="calc-row">
+          <span>EXPRESS DISPATCH</span>
+          <span id="shippingVal">$15.00</span>
+        </div>
+        <div class="calc-row total-row">
+          <span>NET PAYABLE</span>
+          <span id="totalVal">$0.00</span>
+        </div>
+      </div>
+
+      <button class="btn-cyber btn-volt btn-block" id="proceedCheckoutBtn">
+        <span>INITIALIZE ENCRYPTED CHECKOUT</span>
+        <span class="btn-arrow">→</span>
+      </button>
+
+      <span class="safe-note">🔒 256-Bit SHA Encrypted Protocol • Tracked Dispatch</span>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       11. SLIDE-OUT WISHLIST VAULT
+       ========================================================================= -->
+  <aside class="tactical-drawer wishlist-drawer" id="wishlistDrawer" aria-label="Wishlist Vault">
+    <div class="drawer-header-strip">
+      <div class="drawer-title-flex">
+        <span class="drawer-title">SAVED VAULT PIECES</span>
+        <span class="drawer-counter" id="wishlistBadgeText">[0 PIECES]</span>
+      </div>
+      <button class="close-cyber-btn" id="closeWishlistBtn" aria-label="Close Wishlist">✕</button>
+    </div>
+
+    <div class="drawer-items-box" id="wishlistItemList">
+      <div class="empty-stash" id="emptyWishlistNotice">
+        <span class="empty-icon">[♡]</span>
+        <p>ZERO PIECES IN VAULT</p>
+        <p class="sub-txt">Click the heart icon on any product card to bookmark pieces.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       12. TECHNICAL SPEC QUICK VIEW MODAL
+       ========================================================================= -->
+  <dialog class="cyber-modal" id="quickViewDialog" aria-label="Technical Specification Sheet">
+    <div class="modal-shell">
+      <button class="close-cyber-btn modal-exit" id="closeQvBtn">✕</button>
+      
+      <div class="modal-split">
+        <!-- Visual Gallery -->
+        <div class="modal-gallery">
+          <div class="qv-img-frame">
+            <img id="modalMainImg" src="" alt="Silhoutte Detail">
+            <span class="qv-corner-badge" id="modalBadge"></span>
+          </div>
+          <div class="qv-thumbs">
+            <button class="qv-thumb active" id="modalThumb1">
+              <img id="modalThumbImg1" src="" alt="Angle 1">
+            </button>
+            <button class="qv-thumb" id="modalThumb2">
+              <img id="modalThumbImg2" src="" alt="Angle 2">
+            </button>
+          </div>
+        </div>
+
+        <!-- Tech Specs & Configuration -->
+        <div class="modal-info">
+          <div class="qv-category-tag" id="modalCategory">STREETWEAR // OUTERWEAR</div>
+          <h2 class="qv-name" id="modalTitle">Piece Name</h2>
+          
+          <div class="qv-rating-bar">
+            <span class="qv-stars" id="modalStars">★★★★★</span>
+            <span class="qv-reviews" id="modalReviewCount">4.9 (58 Dispatch Reviews)</span>
+          </div>
+
+          <div class="qv-pricing-line">
+            <span class="qv-price" id="modalPrice">$0.00</span>
+            <span class="qv-orig-price" id="modalOrigPrice"></span>
+            <span class="qv-disc-tag" id="modalDiscTag"></span>
+          </div>
+
+          <p class="qv-description" id="modalDesc">Technical piece summary.</p>
+
+          <!-- Technical Spec Badge -->
+          <div class="tech-spec-highlight">
+            <span class="spec-label">TECH SPECIFICATION:</span>
+            <p id="modalTechSpecs">3-Layer Cordura • Fidlock magnetic buckles</p>
+          </div>
+
+          <!-- Color Swatches -->
+          <div class="qv-option-block">
+            <label class="option-lbl">SHADE MATRIX: <strong id="modalColorName">Cyber Black</strong></label>
+            <div class="swatches-row" id="modalSwatches"></div>
+          </div>
+
+          <!-- Size Pills -->
+          <div class="qv-option-block">
+            <div class="size-header-flex">
+              <label class="option-lbl">DIMENSION: <strong id="modalSizeName">M</strong></label>
+              <button class="size-chart-btn" id="modalSizeGuideBtn">DIMENSION GUIDE</button>
+            </div>
+            <div class="sizes-row" id="modalSizes"></div>
+          </div>
+
+          <!-- Quantity & Action -->
+          <div class="qv-action-deck">
+            <div class="cyber-stepper">
+              <button class="step-btn" id="modalQtyMinus">−</button>
+              <span class="step-val" id="modalQtyVal">1</span>
+              <button class="step-btn" id="modalQtyPlus">+</button>
+            </div>
+
+            <button class="btn-cyber btn-volt flex-expand" id="modalAddCartBtn">
+              <span>ADD TO STASH BAG</span>
+              <span class="btn-arrow">+</span>
+            </button>
+
+            <button class="btn-cyber btn-outline modal-wishlist" id="modalWishlistBtn" title="Save to Vault">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Dispatch Meta -->
+          <div class="dispatch-notes">
+            <span>✓ Ready for immediate DHL Express deployment</span>
+            <span>✓ Authenticated via NFC micro-tag</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- =========================================================================
+       13. INTERACTIVE SIMULATED CHECKOUT MODAL
+       ========================================================================= -->
+  <dialog class="cyber-modal" id="checkoutDialog" aria-label="Order Dispatch Finalization">
+    <div class="modal-shell checkout-shell">
+      <button class="close-cyber-btn modal-exit" id="closeCheckoutBtn">✕</button>
+      
+      <div class="checkout-title-strip">
+        <span class="sub-prompt">> SECURE DISPATCH PROTOCOL</span>
+        <h2>FINALIZE ORDER ACQUISITION</h2>
+        <p>Confirm shipping coordinates and payment method for secure dispatch.</p>
+      </div>
+
+      <div class="checkout-summary-box">
+        <h4>ACQUISITION MANIFEST (<span id="coCount">0</span> ITEMS)</h4>
+        <div class="co-thumbs-row" id="coThumbs"></div>
+        <div class="co-amount-row">
+          <span>NET AMOUNT PAYABLE:</span>
+          <strong id="coPayable">$0.00</strong>
+        </div>
+      </div>
+
+      <form class="checkout-fields-form" id="coForm">
+        <div class="input-duo">
+          <div class="f-group">
+            <label for="fName">OPERATOR FIRST NAME</label>
+            <input type="text" id="fName" value="Kasper" required>
+          </div>
+          <div class="f-group">
+            <label for="lName">OPERATOR LAST NAME</label>
+            <input type="text" id="lName" value="Vogel" required>
+          </div>
+        </div>
+
+        <div class="f-group">
+          <label for="shipAddr">DELIVERY COORDINATES / ADDRESS</label>
+          <input type="text" id="shipAddr" value="Oranienstraße 142, Loft 4B" required>
+        </div>
+
+        <div class="input-duo">
+          <div class="f-group">
+            <label for="shipCity">CITY</label>
+            <input type="text" id="shipCity" value="Berlin" required>
+          </div>
+          <div class="f-group">
+            <label for="shipZip">POSTAL CODE</label>
+            <input type="text" id="shipZip" value="10969" required>
+          </div>
+        </div>
+
+        <div class="f-group">
+          <label>PAYMENT PROTOCOL</label>
+          <div class="pay-options-col">
+            <label class="pay-radio">
+              <input type="radio" name="payType" value="card" checked>
+              <span>CREDIT / DEBIT CARD [•••• 8829]</span>
+            </label>
+            <label class="pay-radio">
+              <input type="radio" name="payType" value="applepay">
+              <span>APPLE PAY EXPRESS</span>
+            </label>
+            <label class="pay-radio">
+              <input type="radio" name="payType" value="crypto">
+              <span>BITCOIN / ETHEREUM LIGHTNING</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-cyber btn-volt btn-block">
+          <span>CONFIRM & DISPATCH ORDER</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- =========================================================================
+       14. LIVE TOAST HUD NOTIFICATIONS
+       ========================================================================= -->
+  <div class="toast-hud-stack" id="toastHUD" aria-live="assertive"></div>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
